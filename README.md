@@ -10,9 +10,9 @@ Die zentrale Idee: **`AGENTS.md` ist Router und Arbeitsvertrag, kein Handbuch fu
 
 ### Schnellstart
 
-Global installieren:
+Global installieren geht auf zwei Arten. Details und Fehlerbehebung stehen im Installationshandbuch: [`docs/installation.de.md`](docs/installation.de.md).
 
-Im Terminal:
+**Variante 1: in einer Terminal-Session ausfuehren**
 
 ```bash
 mkdir -p ~/.codex/skills
@@ -20,11 +20,13 @@ git clone https://github.com/vibercoder79/codex-governance-best-practice.git ~/.
 test -f ~/.codex/skills/codex-setup-checklist/SKILL.md
 ```
 
-Oder Codex darum bitten:
+**Variante 2: Codex diesen Prompt geben**
 
 ```text
 Installiere den Skill https://github.com/vibercoder79/codex-governance-best-practice global als ~/.codex/skills/codex-setup-checklist und pruefe danach, ob SKILL.md vorhanden ist.
 ```
+
+Hinweis: Wenn Codex die globale Installation ausfuehrt, schreibt es nach `~/.codex/skills` und fragt je nach Sandbox/Approval nach Freigabe.
 
 Projektlokal installieren:
 
@@ -123,9 +125,9 @@ The core idea: **`AGENTS.md` is a router and working agreement, not a handbook f
 
 ### Quick Start
 
-Install globally:
+There are two ways to install globally. Details and troubleshooting are in the installation handbook: [`docs/installation.en.md`](docs/installation.en.md).
 
-In the terminal:
+**Option 1: run this in a terminal session**
 
 ```bash
 mkdir -p ~/.codex/skills
@@ -133,11 +135,13 @@ git clone https://github.com/vibercoder79/codex-governance-best-practice.git ~/.
 test -f ~/.codex/skills/codex-setup-checklist/SKILL.md
 ```
 
-Or ask Codex to do it:
+**Option 2: give Codex this prompt**
 
 ```text
 Install the skill https://github.com/vibercoder79/codex-governance-best-practice globally as ~/.codex/skills/codex-setup-checklist and then verify that SKILL.md exists.
 ```
+
+Note: If Codex performs the global installation, it writes to `~/.codex/skills` and may request permission depending on sandbox/approval settings.
 
 Install per project:
 
