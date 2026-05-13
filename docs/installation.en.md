@@ -26,9 +26,26 @@ Skills are stored below `skills/`:
 ~/.codex/skills/
 ```
 
+## Terminal or Codex?
+
+You have two options:
+
+1. **Run the commands yourself in the terminal:** Copy the commands from this guide into your terminal.
+2. **Ask Codex to install it:** Give Codex a prompt that explicitly allows the global installation.
+
+Example prompt for Codex:
+
+```text
+Install the skill https://github.com/vibercoder79/codex-governance-best-practice globally as ~/.codex/skills/codex-setup-checklist and then verify that SKILL.md exists.
+```
+
+Note: Global installation writes outside the current repository into `~/.codex/skills`. Depending on sandbox and approval settings, Codex may need to request permission. That is expected.
+
 ## Option A: Install Globally
 
 Use this option if you want to use the skill across multiple repositories.
+
+Run the following commands in your terminal if you want to install it yourself:
 
 1. Create the skills directory:
 
@@ -181,10 +198,18 @@ Die vollstaendige deutsche Anleitung findest du unter [`installation.de.md`](ins
 
 Kurzversion:
 
+Im Terminal:
+
 ```bash
 mkdir -p ~/.codex/skills
 git clone https://github.com/vibercoder79/codex-governance-best-practice.git ~/.codex/skills/codex-setup-checklist
 test -f ~/.codex/skills/codex-setup-checklist/SKILL.md
+```
+
+Oder Codex darum bitten:
+
+```text
+Installiere den Skill https://github.com/vibercoder79/codex-governance-best-practice global als ~/.codex/skills/codex-setup-checklist und pruefe danach, ob SKILL.md vorhanden ist.
 ```
 
 Danach nutzen:

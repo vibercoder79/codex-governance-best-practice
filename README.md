@@ -12,10 +12,18 @@ Die zentrale Idee: **`AGENTS.md` ist Router und Arbeitsvertrag, kein Handbuch fu
 
 Global installieren:
 
+Im Terminal:
+
 ```bash
 mkdir -p ~/.codex/skills
 git clone https://github.com/vibercoder79/codex-governance-best-practice.git ~/.codex/skills/codex-setup-checklist
 test -f ~/.codex/skills/codex-setup-checklist/SKILL.md
+```
+
+Oder Codex darum bitten:
+
+```text
+Installiere den Skill https://github.com/vibercoder79/codex-governance-best-practice global als ~/.codex/skills/codex-setup-checklist und pruefe danach, ob SKILL.md vorhanden ist.
 ```
 
 Projektlokal installieren:
@@ -117,10 +125,18 @@ The core idea: **`AGENTS.md` is a router and working agreement, not a handbook f
 
 Install globally:
 
+In the terminal:
+
 ```bash
 mkdir -p ~/.codex/skills
 git clone https://github.com/vibercoder79/codex-governance-best-practice.git ~/.codex/skills/codex-setup-checklist
 test -f ~/.codex/skills/codex-setup-checklist/SKILL.md
+```
+
+Or ask Codex to do it:
+
+```text
+Install the skill https://github.com/vibercoder79/codex-governance-best-practice globally as ~/.codex/skills/codex-setup-checklist and then verify that SKILL.md exists.
 ```
 
 Install per project:
