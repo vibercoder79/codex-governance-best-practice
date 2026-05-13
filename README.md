@@ -35,6 +35,7 @@ Ausfuehrliche Anleitungen:
 
 - Installation: [`docs/installation.de.md`](docs/installation.de.md)
 - Nutzung und Modi: [`docs/usage.de.md`](docs/usage.de.md)
+- Handbuch: [`docs/handbook.de.md`](docs/handbook.de.md)
 
 ### Wofuer der Skill gedacht ist
 
@@ -58,8 +59,11 @@ Ausfuehrliche Anleitungen:
 ├── docs/
 │   ├── installation.de.md
 │   ├── installation.en.md
+│   ├── handbook.de.md
+│   ├── handbook.en.md
 │   ├── usage.de.md
-│   └── usage.en.md
+│   ├── usage.en.md
+│   └── diagrams/
 ├── references/
 │   ├── checklist.yaml
 │   ├── conflict-model.md
@@ -136,6 +140,7 @@ Detailed guides:
 
 - Installation: [`docs/installation.en.md`](docs/installation.en.md)
 - Usage and modes: [`docs/usage.en.md`](docs/usage.en.md)
+- Handbook: [`docs/handbook.en.md`](docs/handbook.en.md)
 
 ### What the Skill Is For
 
@@ -159,8 +164,11 @@ Detailed guides:
 ├── docs/
 │   ├── installation.de.md
 │   ├── installation.en.md
+│   ├── handbook.de.md
+│   ├── handbook.en.md
 │   ├── usage.de.md
-│   └── usage.en.md
+│   ├── usage.en.md
+│   └── diagrams/
 ├── references/
 │   ├── checklist.yaml
 │   ├── conflict-model.md
