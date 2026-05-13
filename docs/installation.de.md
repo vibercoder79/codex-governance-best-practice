@@ -103,9 +103,15 @@ Nach der Installation kannst du den Skill direkt im Prompt ansprechen.
 
 Best-Practice-Setup fuer ein Repository installieren:
 
+1. Oeffne Codex im Ziel-Repository.
+2. Stelle sicher, dass der Skill global oder projektlokal installiert ist.
+3. Gib Codex diesen Prompt:
+
 ```text
 Use the codex-setup-checklist skill to create a safe project-level Codex setup for this repository.
 ```
+
+Der Skill erzeugt oder aktualisiert dann typischerweise `AGENTS.md`, `.codex/config.toml`, `.codex/rules/default.rules`, optional Hooks, `PLANS.md` und `code_review.md`.
 
 Setup eines Repositories prüfen:
 

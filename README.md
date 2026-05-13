@@ -35,7 +35,19 @@ mkdir -p .codex/skills
 git clone https://github.com/vibercoder79/codex-governance-best-practice.git .codex/skills/codex-setup-checklist
 ```
 
-Skill in Codex nutzen:
+Projekt-Setup mit dem Skill installieren:
+
+1. Oeffne Codex im Ziel-Repository.
+2. Stelle sicher, dass der Skill global oder projektlokal installiert ist.
+3. Gib Codex diesen Prompt:
+
+```text
+Use the codex-setup-checklist skill to create a safe project-level Codex setup for this repository.
+```
+
+Das erzeugt oder aktualisiert typischerweise `AGENTS.md`, `.codex/config.toml`, `.codex/rules/default.rules`, optional Hooks, `PLANS.md` und `code_review.md`.
+
+Bestehendes Setup auditieren:
 
 ```text
 Use the codex-setup-checklist skill to audit this repository.
@@ -150,7 +162,19 @@ mkdir -p .codex/skills
 git clone https://github.com/vibercoder79/codex-governance-best-practice.git .codex/skills/codex-setup-checklist
 ```
 
-Use the skill in Codex:
+Install the project setup with the skill:
+
+1. Open Codex in the target repository.
+2. Make sure the skill is installed globally or project-locally.
+3. Give Codex this prompt:
+
+```text
+Use the codex-setup-checklist skill to create a safe project-level Codex setup for this repository.
+```
+
+This typically creates or updates `AGENTS.md`, `.codex/config.toml`, `.codex/rules/default.rules`, optional hooks, `PLANS.md`, and `code_review.md`.
+
+Audit an existing setup:
 
 ```text
 Use the codex-setup-checklist skill to audit this repository.
