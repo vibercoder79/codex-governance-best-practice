@@ -20,7 +20,10 @@ from typing import Dict, List, Any, Optional
 try:
     import tomllib  # Python 3.11+
 except ModuleNotFoundError:  # pragma: no cover
-    tomllib = None
+    try:
+        import tomli as tomllib  # Python <3.11 fallback
+    except ModuleNotFoundError:
+        tomllib = None
 
 
 SEVERITY_ORDER = {"critical": 0, "high": 1, "medium": 2, "low": 3, "info": 4}
