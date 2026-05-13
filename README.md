@@ -1,5 +1,10 @@
 # Codex Governance Best Practice
 
+Sprache / Language:
+
+- Deutsch: Dieses README ist derzeit die Hauptdokumentation.
+- English: See the English installation guide in [`docs/installation.en.md`](docs/installation.en.md).
+
 Ein praxisorientiertes Starter-Repository für ein sauberes, auditierbares und konfliktarmes Codex-Setup.
 
 Dieses Repository enthält einen **Codex Skill** plus Templates, Rules, Hooks und Prüfskripte. Ziel ist nicht, Codex mit möglichst vielen Regeln zu überladen. Ziel ist ein klares Betriebsmodell: Welche Informationen gehören in `AGENTS.md`, welche in `config.toml`, welche in Skills, welche in Rules und welche in Hooks?
@@ -156,6 +161,9 @@ Dieses Repository enthält:
 ├── AGENTS.md
 ├── PLANS.md
 ├── code_review.md
+├── docs/
+│   ├── installation.de.md
+│   └── installation.en.md
 ├── .codex/
 │   ├── config.toml
 │   ├── rules/
@@ -442,13 +450,21 @@ python3 scripts/detect_conflicts.py --repo .
 
 ---
 
-## 5. Installation als Codex Skill
+## 5. Installation / Installation
+
+Ausführliche Installationsanleitungen:
+
+- Deutsch: [`docs/installation.de.md`](docs/installation.de.md)
+- English: [`docs/installation.en.md`](docs/installation.en.md)
+
+### Deutsch
 
 ### Variante A: Globaler persönlicher Skill
 
 Geeignet, wenn du den Skill in mehreren Repositories nutzen willst.
 
 ```bash
+git clone https://github.com/vibercoder79/codex-governance-best-practice.git
 mkdir -p ~/.codex/skills
 cp -R codex-governance-best-practice ~/.codex/skills/codex-setup-checklist
 ```
@@ -465,7 +481,7 @@ Geeignet, wenn der Skill nur in einem bestimmten Repo verfügbar sein soll.
 
 ```bash
 mkdir -p .codex/skills
-cp -R codex-governance-best-practice .codex/skills/codex-setup-checklist
+git clone https://github.com/vibercoder79/codex-governance-best-practice.git .codex/skills/codex-setup-checklist
 ```
 
 ### Variante C: Als Vorlage kopieren
@@ -478,6 +494,49 @@ cd codex-governance-best-practice
 ```
 
 Dann Templates anpassen und in Ziel-Repos übernehmen.
+
+### English
+
+Detailed installation guides:
+
+- German: [`docs/installation.de.md`](docs/installation.de.md)
+- English: [`docs/installation.en.md`](docs/installation.en.md)
+
+### Option A: Global Personal Skill
+
+Use this option if you want to use the skill across multiple repositories.
+
+```bash
+git clone https://github.com/vibercoder79/codex-governance-best-practice.git
+mkdir -p ~/.codex/skills
+cp -R codex-governance-best-practice ~/.codex/skills/codex-setup-checklist
+```
+
+Then ask Codex from any repository:
+
+```text
+Use the codex-setup-checklist skill to audit this repo.
+```
+
+### Option B: Project-Local Skill
+
+Use this option if the skill should only be available in one repository.
+
+```bash
+mkdir -p .codex/skills
+git clone https://github.com/vibercoder79/codex-governance-best-practice.git .codex/skills/codex-setup-checklist
+```
+
+### Option C: Use as a Template
+
+Use this option if you want to use this repository as a blueprint for your own internal Codex governance repository.
+
+```bash
+git clone https://github.com/vibercoder79/codex-governance-best-practice.git
+cd codex-governance-best-practice
+```
+
+Then adapt the templates for your target repositories.
 
 ---
 
