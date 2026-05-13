@@ -1,0 +1,29 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .codex/hooks/pre_tool_use_guard.py",
+            "timeout": 30,
+            "statusMessage": "Checking command safety"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .codex/hooks/stop_summary_check.py",
+            "timeout": 30,
+            "statusMessage": "Checking completion quality"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+# Default Codex command governance rules.
+# Place under ~/.codex/rules/default.rules or <repo>/.codex/rules/default.rules.
+# Test with: codex execpolicy check --pretty --rules .codex/rules/default.rules -- <command>
+
+prefix_rule(
+    pattern = ["rm", "-rf"],
+    decision = "forbidden",
+    justification = "Recursive forced deletion is blocked. Use targeted file deletion with explicit approval instead.",
+    match = [
+        "rm -rf node_modules",
+        "rm -rf /tmp/test",
+    ],
+    not_match = [
+        "rm README.md",
+    ],
+)
+
+prefix_rule(
+    pattern = ["git", "push", "--force"],
+    decision = "forbidden",
+    justification = "Force push is blocked. If absolutely required, ask for explicit approval and prefer --force-with-lease.",
+    match = [
+        "git push --force",
+    ],
+    not_match = [
+        "git push --force-with-lease",
+    ],
+)
+
+prefix_rule(
+    pattern = ["git", "push", "--force-with-lease"],
+    decision = "prompt",
+    justification = "Force-with-lease still changes remote history and requires explicit approval.",
+    match = [
+        "git push --force-with-lease",
+    ],
+)
+
+prefix_rule(
+    pattern = [["npm", "pnpm", "yarn", "bun"], ["install", "add"]],
+    decision = "prompt",
+    justification = "Adding or changing dependencies requires approval.",
+    match = [
+        "npm install lodash",
+        "pnpm add zod",
+        "yarn add react",
+        "bun add hono",
+    ],
+)
+
+prefix_rule(
+    pattern = [["npm", "pnpm", "yarn", "bun"], ["publish", "deploy"]],
+    decision = "forbidden",
+    justification = "Publishing or deployment is blocked by default. Use an explicit release workflow with approval.",
+    match = [
+        "npm publish",
+        "pnpm publish",
+    ],
+)
+
+prefix_rule(
+    pattern = ["docker", "compose", "up"],
+    decision = "prompt",
+    justification = "Starting containers may allocate resources or touch local services and requires approval.",
+    match = [
+        "docker compose up",
+        "docker compose up -d",
+    ],
+)
+
+prefix_rule(
+    pattern = [["curl", "wget"]],
+    decision = "prompt",
+    justification = "Network downloads should be explicit and reviewed.",
+    match = [
+        "curl https://example.com/install.sh",
+        "wget https://example.com/file.tar.gz",
+    ],
+)

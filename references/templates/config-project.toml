@@ -1,0 +1,24 @@
+# .codex/config.toml
+# Project-specific Codex defaults. This layer loads only when the project is trusted.
+
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+web_search = "cached"
+
+model_reasoning_effort = "high"
+plan_mode_reasoning_effort = "high"
+model_reasoning_summary = "auto"
+model_verbosity = "medium"
+
+project_doc_max_bytes = 65536
+project_doc_fallback_filenames = ["CLAUDE.md", "CONVENTIONS.md", "TEAM_GUIDE.md"]
+
+[sandbox_workspace_write]
+network_access = false
+writable_roots = []
+exclude_tmpdir_env_var = true
+exclude_slash_tmp = true
+
+[features]
+codex_hooks = true
+multi_agent = true
