@@ -1,99 +1,133 @@
 version: "0.1"
 name: codex-setup-checklist
+description_de: "Zweisprachige Pruefliste fuer Codex-Setup, Audit und Governance."
+description_en: "Bilingual checklist for Codex setup, audit, and governance."
 categories:
   global_config:
     - id: global-config-exists
       severity: high
       check: "~/.codex/config.toml exists"
+      check_de: "~/.codex/config.toml existiert"
+      check_en: "~/.codex/config.toml exists"
       recommendation: "Create a user-level config.toml with model, sandbox, approval, and environment defaults."
+      recommendation_de: "Erstelle eine User-Config mit Modell-, Sandbox-, Approval- und Environment-Defaults."
+      recommendation_en: "Create a user-level config.toml with model, sandbox, approval, and environment defaults."
     - id: global-agents-exists
       severity: high
       check: "~/.codex/AGENTS.md exists"
+      check_de: "~/.codex/AGENTS.md existiert"
+      check_en: "~/.codex/AGENTS.md exists"
       recommendation: "Create global AGENTS.md with short personal working agreements."
-    - id: global-override-aware
-      severity: medium
-      check: "~/.codex/AGENTS.override.md absent or intentionally documented"
-      recommendation: "Use override files only for temporary overrides and document their presence."
+      recommendation_de: "Erstelle eine globale AGENTS.md mit knappen persoenlichen Arbeitsvereinbarungen."
+      recommendation_en: "Create global AGENTS.md with short personal working agreements."
   project_config:
     - id: project-agents-exists
       severity: high
       check: "AGENTS.md exists at repo root"
+      check_de: "AGENTS.md existiert im Repo-Root"
+      check_en: "AGENTS.md exists at repo root"
       recommendation: "Create repo-level AGENTS.md with layout, build/test, constraints, done definition, and conflict handling."
+      recommendation_de: "Erstelle eine Repo-AGENTS.md mit Struktur, Build/Test, Constraints, Definition of Done und Konfliktlogik."
+      recommendation_en: "Create repo-level AGENTS.md with layout, build/test, constraints, done definition, and conflict handling."
     - id: project-codex-config-exists
       severity: high
       check: ".codex/config.toml exists"
+      check_de: ".codex/config.toml existiert"
+      check_en: ".codex/config.toml exists"
       recommendation: "Create project config for repo-specific sandbox, approval, doc size, and hooks settings."
+      recommendation_de: "Erstelle Projekt-Config fuer repo-spezifische Sandbox-, Approval-, Dokumentgroessen- und Hook-Einstellungen."
+      recommendation_en: "Create project config for repo-specific sandbox, approval, doc size, and hooks settings."
     - id: project-trust-note
       severity: medium
       check: "Project trust requirement understood"
+      check_de: "Trust-Anforderung fuer Projekte ist verstanden"
+      check_en: "Project trust requirement understood"
       recommendation: "Remember that project .codex layers load only when the repo is trusted."
+      recommendation_de: "Beachte, dass projektbezogene .codex-Ebenen nur bei vertrauenswuerdigen Repos laden."
+      recommendation_en: "Remember that project .codex layers load only when the repo is trusted."
   security:
     - id: approval-policy
       severity: high
       check: "approval_policy is on-request or stricter"
+      check_de: "approval_policy ist on-request oder strenger"
+      check_en: "approval_policy is on-request or stricter"
       recommendation: "Use on-request as default; avoid never unless environment is controlled."
+      recommendation_de: "Nutze on-request als Default; vermeide never ausser in kontrollierten Umgebungen."
+      recommendation_en: "Use on-request as default; avoid never unless environment is controlled."
     - id: sandbox-mode
       severity: high
       check: "sandbox_mode is workspace-write or read-only"
+      check_de: "sandbox_mode ist workspace-write oder read-only"
+      check_en: "sandbox_mode is workspace-write or read-only"
       recommendation: "Avoid danger-full-access as a default."
+      recommendation_de: "Vermeide danger-full-access als Default."
+      recommendation_en: "Avoid danger-full-access as a default."
     - id: network-access
       severity: high
       check: "sandbox workspace write network access is false by default"
+      check_de: "Shell-Netzwerkzugriff ist standardmaessig deaktiviert"
+      check_en: "Sandbox workspace-write network access is false by default"
       recommendation: "Keep shell network access disabled unless explicitly needed."
-    - id: shell-env-policy
-      severity: high
-      check: "Shell environment excludes secrets, tokens, and keys"
-      recommendation: "Use shell_environment_policy to exclude sensitive environment variables."
+      recommendation_de: "Lasse Shell-Netzwerkzugriff deaktiviert, ausser er wird explizit gebraucht."
+      recommendation_en: "Keep shell network access disabled unless explicitly needed."
   instructions:
-    - id: project-doc-size
-      severity: medium
-      check: "project_doc_max_bytes >= 65536 for larger repos or documented as default"
-      recommendation: "Raise limit or split guidance if AGENTS.md/fallback docs are large."
-    - id: fallback-filenames
-      severity: medium
-      check: "project_doc_fallback_filenames intentional"
-      recommendation: "Include fallback names only when needed, e.g. CLAUDE.md during migration."
     - id: agents-concise
       severity: medium
       check: "AGENTS.md is concise and does not duplicate full framework docs"
+      check_de: "AGENTS.md ist knapp und dupliziert keine vollstaendigen Framework-Dokumente"
+      check_en: "AGENTS.md is concise and does not duplicate full framework docs"
       recommendation: "Move task workflows into skills and references."
+      recommendation_de: "Verschiebe Aufgaben-Workflows in Skills und Referenzen."
+      recommendation_en: "Move task workflows into skills and references."
     - id: conflict-section
       severity: high
       check: "AGENTS.md contains neutral conflict handling"
+      check_de: "AGENTS.md enthaelt neutrale Konfliktbehandlung"
+      check_en: "AGENTS.md contains neutral conflict handling"
       recommendation: "Add precedence model for AGENTS, skills, rules, hooks, and framework docs."
+      recommendation_de: "Ergaenze ein Prioritaetsmodell fuer AGENTS, Skills, Rules, Hooks und Framework-Dokumente."
+      recommendation_en: "Add precedence model for AGENTS, skills, rules, hooks, and framework docs."
   rules:
     - id: rules-exist
       severity: medium
       check: "rules/default.rules exists where command governance is needed"
+      check_de: "rules/default.rules existiert, wo Kommando-Governance gebraucht wird"
+      check_en: "rules/default.rules exists where command governance is needed"
       recommendation: "Create rules for destructive, dependency, git, deployment, and network commands."
-    - id: rules-inline-tests
-      severity: medium
-      check: "Rules include match/not_match examples"
-      recommendation: "Use inline rule tests and validate with codex execpolicy check."
+      recommendation_de: "Erstelle Rules fuer destruktive Kommandos, Dependencies, Git, Deployment und Netzwerk."
+      recommendation_en: "Create rules for destructive, dependency, git, deployment, and network commands."
   hooks:
     - id: hooks-feature-flag
       severity: medium
       check: "codex_hooks feature enabled when hooks are configured"
+      check_de: "codex_hooks Feature ist aktiviert, wenn Hooks konfiguriert sind"
+      check_en: "codex_hooks feature enabled when hooks are configured"
       recommendation: "Add [features] codex_hooks = true."
-    - id: hooks-single-representation
-      severity: medium
-      check: "No same-layer duplicate hook definitions via hooks.json and inline TOML"
-      recommendation: "Prefer hooks.json or inline hooks per layer, not both."
+      recommendation_de: "Ergaenze [features] codex_hooks = true."
+      recommendation_en: "Add [features] codex_hooks = true."
   skills:
     - id: skills-metadata
       severity: medium
       check: "Each SKILL.md has name and concise description"
+      check_de: "Jede SKILL.md hat name und eine knappe description"
+      check_en: "Each SKILL.md has name and concise description"
       recommendation: "Front-load trigger words and boundaries in descriptions."
-    - id: skill-scope
-      severity: medium
-      check: "Skills are focused and do not become mega-frameworks"
-      recommendation: "Split broad workflows into skill families."
+      recommendation_de: "Nenne Triggerbegriffe und Grenzen frueh in der Beschreibung."
+      recommendation_en: "Front-load trigger words and boundaries in descriptions."
   review:
     - id: plans-md
       severity: low
       check: "PLANS.md exists for long-running work"
+      check_de: "PLANS.md existiert fuer laengere Arbeiten"
+      check_en: "PLANS.md exists for long-running work"
       recommendation: "Use execution plans for complex changes."
+      recommendation_de: "Nutze Umsetzungsplaene fuer komplexe Aenderungen."
+      recommendation_en: "Use execution plans for complex changes."
     - id: code-review-md
       severity: low
       check: "code_review.md exists for repo review expectations"
+      check_de: "code_review.md existiert fuer Review-Erwartungen"
+      check_en: "code_review.md exists for repo review expectations"
       recommendation: "Create a lightweight review template for diff, tests, risks, and acceptance."
+      recommendation_de: "Erstelle ein leichtgewichtiges Review-Template fuer Diff, Tests, Risiken und Abnahme."
+      recommendation_en: "Create a lightweight review template for diff, tests, risks, and acceptance."

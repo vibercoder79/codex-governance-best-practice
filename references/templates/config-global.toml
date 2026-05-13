@@ -1,5 +1,6 @@
 # ~/.codex/config.toml
-# Personal Codex defaults. Keep repo-specific behavior in .codex/config.toml.
+# DE: Persoenliche Codex-Defaults. Repo-spezifisches Verhalten gehoert in .codex/config.toml.
+# EN: Personal Codex defaults. Keep repo-specific behavior in .codex/config.toml.
 
 model = "gpt-5.5"
 model_provider = "openai"

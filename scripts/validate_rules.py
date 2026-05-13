@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Lightweight static validation for Codex .rules files.
 
+DE: Leichtgewichtige statische Validierung fuer Codex-.rules-Dateien.
+
 For real execution-policy validation, use:
   codex execpolicy check --pretty --rules <file> -- <command>
+DE: Fuer echte Execution-Policy-Validierung nutze denselben codex execpolicy check.
 """
 
 from __future__ import annotations
@@ -15,21 +18,21 @@ def validate(path: Path) -> list[str]:
     text = path.read_text(encoding="utf-8")
     issues: list[str] = []
     if "prefix_rule" not in text:
-        issues.append("No prefix_rule entries found.")
+        issues.append("EN: No prefix_rule entries found. DE: Keine prefix_rule-Eintraege gefunden.")
     if "decision" not in text:
-        issues.append("No decision field found.")
+        issues.append("EN: No decision field found. DE: Kein decision-Feld gefunden.")
     if "justification" not in text:
-        issues.append("No justification field found.")
+        issues.append("EN: No justification field found. DE: Kein justification-Feld gefunden.")
     if "match" not in text:
-        issues.append("No match examples found.")
+        issues.append("EN: No match examples found. DE: Keine match-Beispiele gefunden.")
     if text.count("(") != text.count(")"):
-        issues.append("Unbalanced parentheses detected.")
+        issues.append("EN: Unbalanced parentheses detected. DE: Unausgeglichene Klammern erkannt.")
     return issues
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Validate .rules files")
-    parser.add_argument("paths", nargs="+", help="Rules files to validate")
+    parser = argparse.ArgumentParser(description="Validate .rules files / .rules-Dateien validieren")
+    parser.add_argument("paths", nargs="+", help="Rules files to validate / Zu validierende Rules-Dateien")
     args = parser.parse_args()
     exit_code = 0
     for p in map(Path, args.paths):
