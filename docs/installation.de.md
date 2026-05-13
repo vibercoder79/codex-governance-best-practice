@@ -1,8 +1,12 @@
 # Installation und Nutzung
 
+## Deutsch
+
 Diese Anleitung richtet sich an Nutzer, die den Skill `codex-setup-checklist` installieren und in Codex verwenden wollen.
 
 Der Skill hilft dabei, Codex-Setups zu prüfen, sichere Projekt-Defaults zu erzeugen, bestehende Claude-Konfigurationen nach Codex zu übertragen und Konflikte zwischen `AGENTS.md`, Skills, Rules, Hooks und Framework-Dokumenten sichtbar zu machen.
+
+Die verschiedenen Nutzungsarten sind separat beschrieben in [`usage.de.md`](usage.de.md). Die englische Fassung dieser Datei liegt unter [`installation.en.md`](installation.en.md).
 
 ## Voraussetzungen
 
@@ -84,6 +88,12 @@ Passe danach die Templates, Rules, Hooks und Referenzdokumente an deine Organisa
 
 Nach der Installation kannst du den Skill direkt im Prompt ansprechen.
 
+Best-Practice-Setup fuer ein Repository installieren:
+
+```text
+Use the codex-setup-checklist skill to create a safe project-level Codex setup for this repository.
+```
+
 Setup eines Repositories prüfen:
 
 ```text
@@ -107,6 +117,8 @@ Konflikte zwischen Anweisungsebenen prüfen:
 ```text
 Use the codex-setup-checklist skill to check conflicts between AGENTS.md, skills, rules, hooks, and framework docs.
 ```
+
+Mehr Beispiele und Entscheidungshilfe findest du in [`usage.de.md`](usage.de.md).
 
 ## Typische Ergebnisse
 
@@ -164,3 +176,23 @@ Wenn Codex den Skill nicht findet:
 - Achte darauf, dass der Skill nicht versehentlich eine zusätzliche Unterordner-Ebene hat, zum Beispiel `codex-setup-checklist/codex-governance-best-practice/SKILL.md`.
 
 Wenn Git nicht verfügbar ist, lade das Repository als ZIP von GitHub herunter und entpacke es in den gewünschten Skill-Ordner.
+
+## English Summary
+
+This German installation guide explains how to install and use the `codex-setup-checklist` skill.
+
+For the full English guide, see [`installation.en.md`](installation.en.md).
+
+Short version:
+
+```bash
+git clone https://github.com/vibercoder79/codex-governance-best-practice.git
+mkdir -p ~/.codex/skills
+cp -R codex-governance-best-practice ~/.codex/skills/codex-setup-checklist
+```
+
+Then use:
+
+```text
+Use the codex-setup-checklist skill to audit this repository.
+```

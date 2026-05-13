@@ -1,20 +1,58 @@
-# Execution Plan Template
+# Execution Plan Template / Vorlage fuer Umsetzungsplaene
+
+## Deutsch
+
+Nutze diese Datei fuer mehrstufige Codex-Arbeiten, die Planung, Checkpoints und Verifikation brauchen.
+
+### Ziel
+
+Beschreibe die Aenderung oder das gewuenschte Ergebnis in ein bis zwei Saetzen.
+
+### Kontext
+
+Liste relevante Dateien, Constraints, fruehere Entscheidungen und bekannte Risiken.
+
+### Nicht-Ziele
+
+Klaere, was nicht geaendert werden soll.
+
+### Plan
+
+1. Aktuellen Zustand pruefen.
+2. Betroffene Dateien identifizieren.
+3. Kleinste sinnvolle Aenderung umsetzen.
+4. Fokussierte Checks ausfuehren.
+5. Diff und Restrisiken pruefen.
+
+### Verifikation
+
+- [ ] Unit Tests:
+- [ ] Lint:
+- [ ] Build:
+- [ ] Manuelle Pruefung:
+- [ ] Security-/Secrets-Check:
+
+### Rollback
+
+Beschreibe, wie die Aenderung bei Bedarf rueckgaengig gemacht wird.
+
+## English
 
 Use this file for multi-step Codex work that needs planning, checkpoints, and verification.
 
-## Goal
+### Goal
 
 Describe the change or outcome in one or two sentences.
 
-## Context
+### Context
 
 List relevant files, constraints, prior decisions, and known risks.
 
-## Non-goals
+### Non-goals
 
 Clarify what should not be changed.
 
-## Plan
+### Plan
 
 1. Inspect current state.
 2. Identify affected files.
@@ -22,7 +60,7 @@ Clarify what should not be changed.
 4. Run focused checks.
 5. Review diff and residual risks.
 
-## Verification
+### Verification
 
 - [ ] Unit tests:
 - [ ] Lint:
@@ -30,6 +68,6 @@ Clarify what should not be changed.
 - [ ] Manual check:
 - [ ] Security/secrets check:
 
-## Rollback
+### Rollback
 
 Describe how to revert if needed.

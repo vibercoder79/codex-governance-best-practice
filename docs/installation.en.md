@@ -1,8 +1,12 @@
 # Installation and Usage
 
+## English
+
 This guide is for users who want to install and use the `codex-setup-checklist` skill in Codex.
 
 The skill helps audit Codex setups, create safe project defaults, migrate existing Claude configuration to Codex, and detect conflicts between `AGENTS.md`, skills, rules, hooks, and framework documents.
+
+The different usage modes are described separately in [`usage.en.md`](usage.en.md). The German version of this file is available at [`installation.de.md`](installation.de.md).
 
 ## Requirements
 
@@ -84,6 +88,12 @@ Then adapt the templates, rules, hooks, and reference documents to your organiza
 
 After installation, invoke the skill directly in your prompt.
 
+Install a best-practice setup for a repository:
+
+```text
+Use the codex-setup-checklist skill to create a safe project-level Codex setup for this repository.
+```
+
 Audit a repository setup:
 
 ```text
@@ -107,6 +117,8 @@ Check conflicts between instruction layers:
 ```text
 Use the codex-setup-checklist skill to check conflicts between AGENTS.md, skills, rules, hooks, and framework docs.
 ```
+
+For more examples and mode guidance, see [`usage.en.md`](usage.en.md).
 
 ## Typical Outputs
 
@@ -164,3 +176,23 @@ If Codex does not find the skill:
 - Make sure the skill was not copied with an extra nested folder, for example `codex-setup-checklist/codex-governance-best-practice/SKILL.md`.
 
 If Git is not available, download the repository as a ZIP from GitHub and unpack it into the desired skill folder.
+
+## Deutsche Kurzfassung
+
+Diese englische Installationsanleitung erklaert, wie der Skill `codex-setup-checklist` installiert und genutzt wird.
+
+Die vollstaendige deutsche Anleitung findest du unter [`installation.de.md`](installation.de.md).
+
+Kurzversion:
+
+```bash
+git clone https://github.com/vibercoder79/codex-governance-best-practice.git
+mkdir -p ~/.codex/skills
+cp -R codex-governance-best-practice ~/.codex/skills/codex-setup-checklist
+```
+
+Danach nutzen:
+
+```text
+Use the codex-setup-checklist skill to audit this repository.
+```

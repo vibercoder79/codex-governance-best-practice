@@ -1,5 +1,6 @@
 # .codex/config.toml
-# Project-specific Codex defaults. This layer loads only when the project is trusted.
+# DE: Projektbezogene Codex-Defaults. Diese Ebene laedt nur, wenn das Projekt vertraut ist.
+# EN: Project-specific Codex defaults. This layer loads only when the project is trusted.
 
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"

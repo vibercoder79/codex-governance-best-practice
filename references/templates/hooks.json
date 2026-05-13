@@ -8,7 +8,7 @@
             "type": "command",
             "command": "python3 .codex/hooks/pre_tool_use_guard.py",
             "timeout": 30,
-            "statusMessage": "Checking command safety"
+            "statusMessage": "Checking command safety / Pruefe Kommando-Sicherheit"
           }
         ]
       }
@@ -20,7 +20,7 @@
             "type": "command",
             "command": "python3 .codex/hooks/stop_summary_check.py",
             "timeout": 30,
-            "statusMessage": "Checking completion quality"
+            "statusMessage": "Checking completion quality / Pruefe Abschlussqualitaet"
           }
         ]
       }
