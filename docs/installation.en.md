@@ -26,35 +26,48 @@ Skills are stored below `skills/`:
 ~/.codex/skills/
 ```
 
+## Terminal or Codex?
+
+You have two options:
+
+1. **Run the commands yourself in the terminal:** Copy the commands from this guide into your terminal.
+2. **Ask Codex to install it:** Give Codex a prompt that explicitly allows the global installation.
+
+Example prompt for Codex:
+
+```text
+Install the skill https://github.com/vibercoder79/codex-governance-best-practice globally as ~/.codex/skills/codex-setup-checklist and then verify that SKILL.md exists.
+```
+
+Note: Global installation writes outside the current repository into `~/.codex/skills`. Depending on sandbox and approval settings, Codex may need to request permission. That is expected.
+
 ## Option A: Install Globally
 
 Use this option if you want to use the skill across multiple repositories.
 
-1. Clone the repository:
+Run the following commands in your terminal if you want to install it yourself:
 
-```bash
-git clone https://github.com/vibercoder79/codex-governance-best-practice.git
-```
-
-2. Create the skills directory:
+1. Create the skills directory:
 
 ```bash
 mkdir -p ~/.codex/skills
 ```
 
-3. Copy the repository as a skill:
+2. Clone the repository directly into the skill target folder:
 
 ```bash
-cp -R codex-governance-best-practice ~/.codex/skills/codex-setup-checklist
+git clone https://github.com/vibercoder79/codex-governance-best-practice.git ~/.codex/skills/codex-setup-checklist
 ```
 
-4. Check that the skill file exists:
+3. Check that the skill file exists:
 
 ```bash
 test -f ~/.codex/skills/codex-setup-checklist/SKILL.md
 ```
 
 Codex can now use the skill in any project.
+
+If the target folder already exists, use the update path below (`cd ~/.codex/skills/codex-setup-checklist` and `git pull`). Remove or replace existing folders only deliberately.
 
 ## Option B: Install Per Project
 
@@ -185,10 +198,18 @@ Die vollstaendige deutsche Anleitung findest du unter [`installation.de.md`](ins
 
 Kurzversion:
 
+Im Terminal:
+
 ```bash
-git clone https://github.com/vibercoder79/codex-governance-best-practice.git
 mkdir -p ~/.codex/skills
-cp -R codex-governance-best-practice ~/.codex/skills/codex-setup-checklist
+git clone https://github.com/vibercoder79/codex-governance-best-practice.git ~/.codex/skills/codex-setup-checklist
+test -f ~/.codex/skills/codex-setup-checklist/SKILL.md
+```
+
+Oder Codex darum bitten:
+
+```text
+Installiere den Skill https://github.com/vibercoder79/codex-governance-best-practice global als ~/.codex/skills/codex-setup-checklist und pruefe danach, ob SKILL.md vorhanden ist.
 ```
 
 Danach nutzen:
