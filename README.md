@@ -13,9 +13,9 @@ Die zentrale Idee: **`AGENTS.md` ist Router und Arbeitsvertrag, kein Handbuch fu
 Global installieren:
 
 ```bash
-git clone https://github.com/vibercoder79/codex-governance-best-practice.git
 mkdir -p ~/.codex/skills
-cp -R codex-governance-best-practice ~/.codex/skills/codex-setup-checklist
+git clone https://github.com/vibercoder79/codex-governance-best-practice.git ~/.codex/skills/codex-setup-checklist
+test -f ~/.codex/skills/codex-setup-checklist/SKILL.md
 ```
 
 Projektlokal installieren:
@@ -118,9 +118,9 @@ The core idea: **`AGENTS.md` is a router and working agreement, not a handbook f
 Install globally:
 
 ```bash
-git clone https://github.com/vibercoder79/codex-governance-best-practice.git
 mkdir -p ~/.codex/skills
-cp -R codex-governance-best-practice ~/.codex/skills/codex-setup-checklist
+git clone https://github.com/vibercoder79/codex-governance-best-practice.git ~/.codex/skills/codex-setup-checklist
+test -f ~/.codex/skills/codex-setup-checklist/SKILL.md
 ```
 
 Install per project:

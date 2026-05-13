@@ -30,31 +30,27 @@ Skills are stored below `skills/`:
 
 Use this option if you want to use the skill across multiple repositories.
 
-1. Clone the repository:
-
-```bash
-git clone https://github.com/vibercoder79/codex-governance-best-practice.git
-```
-
-2. Create the skills directory:
+1. Create the skills directory:
 
 ```bash
 mkdir -p ~/.codex/skills
 ```
 
-3. Copy the repository as a skill:
+2. Clone the repository directly into the skill target folder:
 
 ```bash
-cp -R codex-governance-best-practice ~/.codex/skills/codex-setup-checklist
+git clone https://github.com/vibercoder79/codex-governance-best-practice.git ~/.codex/skills/codex-setup-checklist
 ```
 
-4. Check that the skill file exists:
+3. Check that the skill file exists:
 
 ```bash
 test -f ~/.codex/skills/codex-setup-checklist/SKILL.md
 ```
 
 Codex can now use the skill in any project.
+
+If the target folder already exists, use the update path below (`cd ~/.codex/skills/codex-setup-checklist` and `git pull`). Remove or replace existing folders only deliberately.
 
 ## Option B: Install Per Project
 
@@ -186,9 +182,9 @@ Die vollstaendige deutsche Anleitung findest du unter [`installation.de.md`](ins
 Kurzversion:
 
 ```bash
-git clone https://github.com/vibercoder79/codex-governance-best-practice.git
 mkdir -p ~/.codex/skills
-cp -R codex-governance-best-practice ~/.codex/skills/codex-setup-checklist
+git clone https://github.com/vibercoder79/codex-governance-best-practice.git ~/.codex/skills/codex-setup-checklist
+test -f ~/.codex/skills/codex-setup-checklist/SKILL.md
 ```
 
 Danach nutzen:
